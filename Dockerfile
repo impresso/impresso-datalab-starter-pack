@@ -2,22 +2,21 @@ FROM quay.io/jupyter/scipy-notebook:python-3.11
 
 USER root
 
-ARG NB_USER=impresso
 ARG NB_UID=1000
-ENV USER ${NB_USER}
+ENV USER impresso
 ENV NB_UID ${NB_UID}
-ENV HOME /home/${NB_USER}
+ENV HOME /home/impresso
 
 RUN adduser --help
 
 RUN useradd -o \
     --uid ${NB_UID} \
-    ${NB_USER}
+    impresso
 
 COPY notebooks ${HOME}
 
 RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
+USER impresso
 
 COPY requirements.txt /tmp/requirements.txt
 
