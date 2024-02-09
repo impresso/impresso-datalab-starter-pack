@@ -7,8 +7,6 @@ ENV USER impresso
 ENV NB_UID ${NB_UID}
 ENV HOME /home/impresso
 
-RUN adduser --help
-
 RUN useradd -o \
     --uid ${NB_UID} \
     impresso
