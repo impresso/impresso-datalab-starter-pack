@@ -5,8 +5,9 @@ name = "pypi"
 
 [packages]
 requests = "*"
-jupyter = "*"
 black = {extras = ["jupyter"], version = "*"}
+jupyterlab = "*"
+nbconvert = "*"
 
 [dev-packages]
 
